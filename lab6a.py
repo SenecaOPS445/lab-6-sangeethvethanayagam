@@ -28,7 +28,7 @@ class Student:
         else:
             return 'GPA of student ' + self.name + ' is ' + str(gpa)
         
-             
+
 
     # Return a list of course that the student passed (not a 0.0 grade)
     def displayCourses(self):
