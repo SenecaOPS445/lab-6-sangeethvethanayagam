@@ -23,10 +23,11 @@ class Student:
         for course in self.courses.keys():
             gpa = gpa + self.courses[course]
 
-        if gpa >= 0 and len(self.courses) >= 0:    
-            return 'GPA of student ' + self.name + ' is ' + str(gpa / len(self.courses))
-        else:
+        if gpa == 0 or len(self.courses) == 0:    
             return 'GPA of student ' + self.name + ' is ' + str(gpa)
+        else:
+            return 'GPA of student ' + self.name + ' is ' + str(gpa / len(self.courses))
+
         
 
 
@@ -34,7 +35,7 @@ class Student:
     def displayCourses(self):
         passedCourses = []
         for course, grade in self.courses.items():
-            if grade >= 0:
+            if grade > 0:
                 passedCourses.append(course)
 
         return passedCourses        
