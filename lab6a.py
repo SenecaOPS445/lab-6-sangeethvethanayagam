@@ -6,7 +6,7 @@ class Student:
     # Define the name and number when a student object is created, ex. student1 = Student('john', 025969102)
     def __init__(self, name, number):
         self.name = name
-        self.number = number
+        self.number = str(number)
         self.courses = {}
 
     # Return student name and number
@@ -32,7 +32,13 @@ class Student:
 
     # Return a list of course that the student passed (not a 0.0 grade)
     def displayCourses(self):
-        return
+        passedCourses = []
+        for course, grade in self.courses.items():
+            if grade >= 0:
+                passedCourses.append(course)
+
+        return passedCourses        
+
 
 if __name__ == '__main__':
     # Create first student object and add grades for each class
