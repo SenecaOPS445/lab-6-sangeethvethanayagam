@@ -11,7 +11,7 @@ class Student:
 
     # Return student name and number
     def displayStudent(self):
-        return 'Student Name: ' + self.name + '\n' + 'Student Number: ' + self.number
+        return 'Student Name: ' + self.name + '\n' + 'Student Number: ' + str(self.number)
 
     # Add a new course and grade to students record
     def addGrade(self, course, grade):
@@ -22,7 +22,13 @@ class Student:
         gpa = 0.0
         for course in self.courses.keys():
             gpa = gpa + self.courses[course]
-        return 'GPA of student ' + self.name + ' is ' + str(gpa / len(self.courses))
+
+        if gpa >= 0 and len(self.courses) >= 0:    
+            return 'GPA of student ' + self.name + ' is ' + str(gpa / len(self.courses))
+        else:
+            return 'GPA of student ' + self.name + ' is ' + str(gpa)
+        
+             
 
     # Return a list of course that the student passed (not a 0.0 grade)
     def displayCourses(self):
